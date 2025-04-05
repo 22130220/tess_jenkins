@@ -1,10 +1,10 @@
-FROM maven:3.8.5-openjdk-17 AS build
+FROM maven:3.9-amazoncorretto-21 AS build
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
 
-FROM tomcat:10.1.39-jre17
+FROM tomcat:10.1.36-jre21
 RUN rm -rf /usr/local/tomcat/webapps/*
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080

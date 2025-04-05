@@ -31,8 +31,6 @@ pipeline {
                     sh "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
                     sh "docker push ${DOCKER_IMAGE}:latest"
                 }
-                sh "docker rmi ${DOCKER_IMAGE}:${DOCKER_TAG}"
-                sh "docker rmi ${DOCKER_IMAGE}:latest"
             }
         }
 

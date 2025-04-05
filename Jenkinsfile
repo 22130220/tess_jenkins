@@ -33,18 +33,18 @@ pipeline {
                     sh "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
                     sh "docker push ${DOCKER_IMAGE}:latest"
                 }
-                sh "docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}"
-                sh "docker image rm ${DOCKER_IMAGE}:latest"
+                sh "docker rmi ${DOCKER_IMAGE}:${DOCKER_TAG}"
+                //sh "docker rmi ${DOCKER_IMAGE}:latest"
             }
         }
 
-  stage('deploy') {
-            steps {
-                withCredentials([sshUserPrivateKey(credentialsId: 'ssh-mikejohnp-deploy', keyFileVariable: 'SSH_KEY')]) {
-                    sh "ssh -o StrictHostKeyChecking=no -i \$SSH_KEY deploy@159.223.35.43 './deploy.sh'"
-                }
-            }
-        }
+  // stage('deploy') {
+  //           steps {
+  //               withCredentials([sshUserPrivateKey(credentialsId: 'ssh-mikejohnp-deploy', keyFileVariable: 'SSH_KEY')]) {
+  //                   sh "ssh -o StrictHostKeyChecking=no -i \$SSH_KEY deploy@159.223.35.43 './deploy.sh'"
+  //               }
+  //           }
+  //       }
   }
 
   post {

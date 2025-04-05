@@ -38,13 +38,13 @@ pipeline {
             }
         }
 
-  stage('deploy') {
-            steps {
-                withCredentials([sshUserPrivateKey(credentialsId: 'ssh-mikejohnp-deploy', keyFileVariable: 'SSH_KEY')]) {
-                    sh "ssh -o StrictHostKeyChecking=no -i \$SSH_KEY deploy@159.223.35.43 './deploy.sh'"
-                }
-            }
-        }
+  // stage('deploy') {
+  //           steps {
+  //               withCredentials([sshUserPrivateKey(credentialsId: 'ssh-mikejohnp-deploy', keyFileVariable: 'SSH_KEY')]) {
+  //                   sh "ssh -o StrictHostKeyChecking=no -i \$SSH_KEY deploy@159.223.35.43 './deploy.sh'"
+  //               }
+  //           }
+  //       }
   }
 
   post {

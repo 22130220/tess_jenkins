@@ -1,6 +1,6 @@
 pipeline {
 
-  agent none
+  agent any
 
   environment {
     DOCKER_IMAGE = "mikejohnp/tess_jenkins"
@@ -20,7 +20,7 @@ pipeline {
         }
 
    stage("build") {
-            agent { node { label 'Built-In Node' } }
+            //agent { node { label 'Built-In Node' } }
             environment {
                 DOCKER_TAG = "${GIT_BRANCH.tokenize('/').pop()}-${GIT_COMMIT.substring(0,7)}"
             }

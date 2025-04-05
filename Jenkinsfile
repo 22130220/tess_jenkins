@@ -37,6 +37,12 @@ pipeline {
                 sh "docker image rm ${DOCKER_IMAGE}:latest"
             }
         }
+
+    stage('deploy') {
+       withCredentials([sshKey(credentialsId: 'ssh-mikejohnp-deploy', sshKeyVariable: 'SSH-KEY')]) {
+            sh "ssh -i $SSH_KEY deploy@159.223.35.43 './deploy.sh'"
+        }
+    }
   }
 
   post {

@@ -38,13 +38,13 @@ pipeline {
             }
         }
 
-    stage('deploy') {
-      steps {
-       withCredentials([sshKey(credentialsId: 'ssh-mikejohnp-deploy', sshKeyVariable: 'SSH-KEY')]) {
-            sh "ssh -i $SSH_KEY deploy@159.223.35.43 './deploy.sh'"
+  stage('deploy') {
+            steps {
+                withCredentials([sshUserPrivateKey(credentialsId: 'ssh-mikejohnp-deploy', keyFileVariable: 'SSH_KEY')]) {
+                    sh "ssh -v -i \$SSH_KEY deploy@159.223.35.43 './deploy.sh'"
+                }
+            }
         }
-      }
-    }
   }
 
   post {

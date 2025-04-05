@@ -34,6 +34,7 @@ pipeline {
                     sh "docker push ${DOCKER_IMAGE}:latest"
                 }
                 sh "docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}"
+                sh "docker compose stop"
                 sh "docker image rm ${DOCKER_IMAGE}:latest"
             }
         }
@@ -41,7 +42,7 @@ pipeline {
   stage('deploy') {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: 'ssh-mikejohnp-deploy', keyFileVariable: 'SSH_KEY')]) {
-                    sh "ssh -v -o StrictHostKeyChecking=no -i \$SSH_KEY deploy@159.223.35.43 './deploy.sh'"
+                    sh "ssh -o StrictHostKeyChecking=no -i \$SSH_KEY deploy@159.223.35.43 './deploy.sh'"
                 }
             }
         }

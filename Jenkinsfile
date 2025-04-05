@@ -10,7 +10,7 @@ pipeline {
         stage("Test") {
             agent {
                 docker {
-                    image 'maven:3.8.6-openjdk-17'
+                    image 'maven:3.9.1-amazoncorretto-19'
                     args '-u 0:0 -v /tmp:/root/.cache'
                 }
             }

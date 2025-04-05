@@ -34,7 +34,7 @@ pipeline {
                     sh "docker push ${DOCKER_IMAGE}:latest"
                 }
                 sh "docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}"
-                sh "docker compose stop"
+                sh "docker compose -f /home/deploy/docker-compose.yml down"
                 sh "docker image rm ${DOCKER_IMAGE}:latest"
             }
         }

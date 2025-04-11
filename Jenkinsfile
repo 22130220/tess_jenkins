@@ -9,17 +9,17 @@ pipeline {
   }
 
   stages {
-//         stage("Test") {
-//             agent {
-//                 docker {
-//                     image 'maven:3.9.1-amazoncorretto-19'
-//                     args '-u 0:0 -v /tmp:/root/.cache'
-//                 }
-//             }
-//             steps {
-//                 sh "mvn test"
-//             }
-//         }
+stage("Test") {
+            agent {
+                docker {
+                    image 'gradle:8.10-jdk21'
+                    args '-u 0:0 -v /tmp:/root/.cache'
+                }
+            }
+            steps {
+                sh "gradle test --no-daemon"
+            }
+         }
 
    stage("build") {
             //agent { node { label 'Built-In Node' } }

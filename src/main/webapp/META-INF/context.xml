@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Resource name="jdbc/MyAppDataSource"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://159.223.35.43:3307/shopgachmendb"
+              username="shopgachmen"
+              password="@abc123456"
+              minIdle="5"
+              maxIdle="10"
+              maxTotal="50"
+              maxWaitMillis="10000"
+    />
+</Context>

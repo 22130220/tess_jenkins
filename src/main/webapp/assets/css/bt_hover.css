@@ -1,0 +1,106 @@
+/* Container chính */
+.container-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "bt-1 bt-2 bt-3"
+    "bt-4 bt-5 bt-6";
+    position: relative;
+    perspective: 800px;
+    width: 500px;
+    height: 47px;
+    transition: all 0.3s ease-in-out;
+}
+
+.container-button:active {
+    transform: scale(0.95);
+}
+
+/* Các vùng hover */
+.hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}
+
+.bt-1 { grid-area: bt-1; }
+.bt-2 { grid-area: bt-2; }
+.bt-3 { grid-area: bt-3; }
+.bt-4 { grid-area: bt-4; }
+.bt-5 { grid-area: bt-5; }
+.bt-6 { grid-area: bt-6; }
+
+/* Thẻ div thay thế button */
+.btn-custom {
+    position: absolute;
+    width: 100%;
+    height: 47px;
+    background: transparent;
+    font-size: 17px;
+    font-weight: 900;
+    border: 1px solid #f39923;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+/* Hiệu ứng nền sau */
+.btn-custom::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 47px;
+    background-color: #2e2100ff;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+}
+
+/* Hiển thị chữ Hover / Click */
+.btn-custom::after {
+    content: "Mua Ngay";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    font-size: 17px;
+    font-weight: 900;
+    color: #f19c2b;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+
+    /* Căn giữa chữ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover hiệu ứng */
+.hover:hover ~ .btn-custom {
+    transform: translateY(-5px);
+    transition: transform 0.2s ease-in-out;
+}
+
+.hover:hover ~ .btn-custom::before {
+    background: transparent;
+}
+
+.hover:hover ~ .btn-custom::after {
+    content: "Mua Ngay"; /* Chữ đổi thành Click */
+    font-size: 34px;
+    color: #f19c2b;
+}
+
+/* Hiệu ứng click */
+.btn-custom:active {
+    transform: scale(0.95);
+}

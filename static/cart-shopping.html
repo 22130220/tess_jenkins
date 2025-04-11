@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+   
+    <!-- Nhúng phông chữ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/cacthanhphancodinh.css">
+    <link rel="stylesheet" href="./assets/css/dropdown_user_menu.css">
+     <!-- Thêm favicon -->
+     <link
+     rel="icon"
+     type="image/x-icon"
+     href="./assets/icons/logo2_no_text.svg"
+     
+ />
+ <link rel="stylesheet" href="./assets/css/giohang.css">
+</head>
+<body>
+    
+<!-- Đầu trang -->
+<header class="header fixed">
+    <div class="main-content">
+        <div class="body">
+            <!-- Logo -->
+            <a href="./home.html">
+                <img
+                    src="./assets/icons/logo2.svg"
+                    alt="Logo"
+                    class="logo"
+                />
+            </a>
+
+            <!-- Thanh tìm kiếm -->
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+
+            <div class="user-menu">
+                <div class="user-info">
+                  <img src="https://vcdn1-giadinh.vnecdn.net/2022/05/03/gai-beo-1-2-6866-1651575364.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=DpsrLTd56Z7lc77C9uK-yA" alt="Avatar" class="avatar">
+                  <span class="username">Trương Diễm</span>
+                </div>
+                <div class="dropdown">
+                  <ul>
+                    <li><a href="./hoso.html">Tài khoản của tôi</a></li>
+                    <li><a href="./lichsudonhangthanhcong.html">Đơn mua</a></li>
+                    <li><a href="./index.html">Đăng xuất</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            <!-- Cart Button -->
+            <a href="./giohang.html" class="cart-button">
+                <svg
+                    class="icon"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M10 20C10 21.6569 8.65685 23 7 23C5.34315 23 4 21.6569 4 20C4 18.3431 5.34315 17 7 17C8.65685 17 10 18.3431 10 20ZM8 20C8 20.5523 7.55228 21 7 21C6.44772 21 6 20.5523 6 20C6 19.4477 6.44772 19 7 19C7.55228 19 8 19.4477 8 20Z"
+                        fill="#2e2100ff"
+                    />
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M20 20C20 21.6569 18.6569 23 17 23C15.3431 23 14 21.6569 14 20C14 18.3431 15.3431 17 17 17C18.6569 17 20 18.3431 20 20ZM18 20C18 20.5523 17.5523 21 17 21C16.4477 21 16 20.5523 16 20C16 19.4477 16.4477 19 17 19C17.5523 19 18 19.4477 18 20Z"
+                        fill="#2e2100ff"
+                    />
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2.10557 2.55276C2.35256 2.05878 2.95323 1.85856 3.44721 2.10555L4.45072 2.6073C5.37999 3.07193 6.0027 3.98429 6.09676 5.01898L6.1446 5.54524C6.16801 5.80278 6.38394 5.99997 6.64255 5.99997H19.8355C21.581 5.99997 22.7892 7.74341 22.1763 9.37778L20.423 14.0533C19.9839 15.2243 18.8645 16 17.614 16H7.82643C6.27482 16 4.97922 14.8168 4.83875 13.2716L4.10497 5.20005C4.07362 4.85515 3.86605 4.55103 3.55629 4.39616L2.55278 3.8944C2.05881 3.64741 1.85858 3.04674 2.10557 2.55276ZM6.91527 7.99997C6.62126 7.99997 6.39071 8.25243 6.41733 8.54524L6.83053 13.0905C6.87736 13.6056 7.30922 14 7.82643 14H17.614C18.0308 14 18.404 13.7414 18.5503 13.3511L20.3037 8.67554C20.4262 8.34866 20.1846 7.99997 19.8355 7.99997H6.91527Z"
+                        fill="#2e2100ff"
+                    />
+                </svg>
+            </a>
+        </div>
+    </div>
+</header>
+
+   
+<div class="cart-page">
+     <!-- Đường dẫn -->
+     <div class="breadcrumb">
+        <a href="./home.html">Trang chủ</a> / <a href="#">Giỏ hàng</a>
+      </div>
+   <div class="duongdanvahinhthucgiao">
+    
+  
+      <div class="hinhthucgiao">
+         <a href=""><div class="gt giaotannoi">Giao tận nơi</div></a> 
+         <a href="./store.html"><div class="gt nhantaicuahang">Đề xuất cửa hàng gần nhất</div></a> 
+      </div>
+   </div>
+
+    <!-- Container -->
+    <div class="cart-container">
+        <div class="cart-left">
+            <h2>Giỏ hàng của bạn</h2>
+            <p>Bạn đang có <span class="highlight">4 sản phẩm</span> trong giỏ hàng</p>
+          
+            <div class="cart-item">
+                <!-- Nút Xóa -->
+                <button class="btn-remove">x</button>
+                
+                <!-- Hình ảnh sản phẩm -->
+                <img src="https://taicera.vn/uploads/tin-tuc/2019_05/mau-gach-men-lat-nen-dep.jpg" alt="Sản phẩm">
+              
+                <!-- Thông tin sản phẩm -->
+                <div class="item-info">
+                  <p class="item-title">Gạch lát nền siêu đẹp</p>
+                  <p class="item-color">Xanh ngọc</p>
+                  <div class="item-price">
+                    <span class="current-price">145,000₫</span>
+                    <span class="old-price">290,000₫</span>
+                  </div>
+                </div>
+              
+                <!-- Bộ điều chỉnh số lượng -->
+                <div class="quantity-control">
+                  <button>-</button>
+                  <input type="number" value="1">
+                  <button>+</button>
+                </div>
+              
+                <!-- Giá tổng -->
+                <p class="item-total">145,000₫</p>
+              </div>
+
+              <div class="cart-item">
+                <!-- Nút Xóa -->
+                <button class="btn-remove">x</button>
+                
+                <!-- Hình ảnh sản phẩm -->
+                <img src="https://taicera.vn/uploads/tin-tuc/2019_05/mau-gach-men-lat-nen-dep.jpg" alt="Sản phẩm">
+              
+                <!-- Thông tin sản phẩm -->
+                <div class="item-info">
+                  <p class="item-title">Gạch lát nền siêu đẹp</p>
+                  <p class="item-color">Xanh ngọc</p>
+                  <div class="item-price">
+                    <span class="current-price">145,000₫</span>
+                    <span class="old-price">290,000₫</span>
+                  </div>
+                </div>
+              
+                <!-- Bộ điều chỉnh số lượng -->
+                <div class="quantity-control">
+                  <button>-</button>
+                  <input type="number" value="1">
+                  <button>+</button>
+                </div>
+              
+                <!-- Giá tổng -->
+                <p class="item-total">145,000₫</p>
+
+                
+              </div>
+              
+            <!-- Ghi chú đơn hàng -->
+            <div class="orders-note">
+              <label for="note">Ghi chú đơn hàng</label>
+              <textarea id="note" placeholder="Ghi chú..."></textarea>
+            </div>
+          
+            
+          </div>
+          
+
+      <!-- Phần thông tin đơn hàng -->
+      <div class="cart-right">
+        <h2>Thông tin đơn hàng</h2>
+        <div class="summary">
+          <p>Tổng tiền:</p>
+          <p class="total-price">580,000₫</p>
+        </div>
+        <p>Phí vận chuyển sẽ được tính ở trang Thanh toán.</p>
+        <p>Mã giảm giá được nhập ở trang Thanh toán.</p>
+        <a href="./delivery_information.html"><button class="btn-checkout">Thanh toán</button></a>
+
+        <!-- Vouchers -->
+        <div class="vouchers">
+          <div class="voucher-card">
+            <div class="voucher-content">
+              <img src="https://theme.hstatic.net/200000796751/1001266995/14/home_coupon_2_img.png?v=66" alt="Voucher">
+              <div class="voucher-info">
+                <p><b>Giảm 200.000đ</b></p>
+                <p>Đơn hàng từ 3 triệu</p>
+                <p>Mã: <b class="a">VOUCHERT11-200K</b></p>
+                <p>HSD: 30/11/2024</p>
+              </div>
+            </div>
+            <button class="btn-copy">SAO CHÉP MÃ</button>
+          </div>
+          <div class="voucher-card">
+            <div class="voucher-content">
+              <img src="https://theme.hstatic.net/200000796751/1001266995/14/home_coupon_2_img.png?v=66" alt="Voucher">
+              <div class="voucher-info">
+                <p><b>Giảm 100.000đ</b></p>
+                <p>Đơn hàng từ 2 triệu</p>
+                <p>Mã: <b class="a">VOUCHERT11-100K</b></p>
+                <p>HSD: 30/11/2024</p>
+              </div>
+            </div>
+            <button class="btn-copy">SAO CHÉP MÃ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/congtrusaochep.js"></script>
+
+    <div class="gioithieuuytin">
+        <div class="info">
+            <div class="info-item">
+                <p>🏆</p>
+                <p>Chất Lượng Cao</p>
+                <p>Sản phẩm từ vật liệu cao cấp</p>
+            </div>
+            <div class="info-item">
+                <p>🛡️</p>
+                <p>Bảo Hành</p>
+                <p>Hơn 2 năm</p>
+            </div>
+            <div class="info-item">
+                <p>🚚</p>
+                <p>Miễn Phí Giao Hàng</p>
+                <p>Cho đơn hàng trên 3,500,000 VNĐ</p>
+            </div>
+            <div class="info-item">
+                <p>📞</p>
+                <p>Hỗ Trợ 24/7</p>
+                <p>Hỗ trợ tận tình</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="main-content">
+            <div class="footer__row">
+                <!-- Footer column 1 -->
+                <div class="footer__col">
+                    <!-- Logo -->
+                    <a href="#" class="logo footer__logo">
+                        <img
+                            src="./assets/icons/logo2_2.svg"
+                            alt="grocerymart"
+                            class="logo__img"
+                        />
+                    </a>
+                    <p class="footer__desc">
+                        "Kiến tạo không gian đẳng cấp – Gạch men bền đẹp,
+                        chất lượng vượt thời gian."
+                    </p>
+
+                    <p class="footer__help-text">
+                        Gửi mail của bạn để nhận các thông tin mới nhất về
+                        sản phẩm.
+                    </p>
+                    <form action="" class="footer__form">
+                        <input
+                            type="text"
+                            class="footer__input"
+                            placeholder="Nhập email của bạn..."
+                        />
+                        <button class="btn btn--primary">Gửi</button>
+                    </form>
+                </div>
+
+                <!-- Footer column 2 -->
+                <div class="footer__col">
+                    <h3 class="footer__heading">Về chúng tôi</h3>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#!" class="footer__link">Giới thiệu</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__link"
+                                >Đánh giá khách hàng</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__link">Tuyển dụng</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__link"
+                                >Giấy phép kinh doanh</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__link"
+                                >Các bộ phận</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Footer column 3 -->
+                <div class="footer__col">
+                    <h3 class="footer__heading">Hỗ trợ</h3>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#!" class="footer__link"
+                                >Trạng thái đơn hàng</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__link">Bảo hành</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Footer column 4 -->
+                <div class="footer__col">
+                    <h3 class="footer__heading">Chính Sách</h3>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#!" class="footer__link"
+                                >Dịch vụ khách hàng</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__link"
+                                >Hướng dẫn mua hàng</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__link"
+                                >Hướng dẫn thanh toán</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__link"
+                                >Giao hàng và nhận hàng</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__link"
+                                >Chính sách đổi trả</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__link"
+                                >Chính sách bảo mật</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Footer column 5 -->
+                <div class="footer__col">
+                    <h3 class="footer__heading">Liên hệ</h3>
+                    <ul class="footer__list">
+                        <li>
+                            <p class="footer__label">Email</p>
+                            <a
+                                href="cuahanggachmen@gmail.com"
+                                class="footer__link footer__text"
+                            >
+                                cuahanggachmen@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <p class="footer__label">Số điện thoại</p>
+                            <a
+                                href="tel:18008888"
+                                class="footer__link footer__text"
+                                >0376272024</a
+                            >
+                        </li>
+                        <li>
+                            <p class="footer__label">Địa chỉ</p>
+                            <p class="footer__text">
+                                Khu phố 6, Phường Linh Trung, Thành Phố Thủ
+                                Đức, Hồ Chí Minh
+                            </p>
+                        </li>
+                        <li>
+                            <p class="footer__label">Thời gian làm việc</p>
+                            <p class="footer__text">
+                                08:00 - 18:00 T2-T7 Hàng Tuần
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+</body>
+</html>

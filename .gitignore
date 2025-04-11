@@ -1,24 +1,120 @@
-# Compiled class file
-*.class
+.idea/
+*.iml
+*.iws
+out/
+.smarttomcat
+.classpath
+.project
+
+# Các file cấu hình Maven/Gradle (nếu sử dụng)
+target/
+build/
+
+# Bỏ qua thư mục upload
+src/main/webapp/upload_image/
 
 # Log file
 *.log
 
-# BlueJ files
-*.ctxt
+# File hệ thống
+.DS_Store
+Thumbs.db
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# File tạm của hệ thống và IDE
+*.swp
+*.tmp
+*.bak
+*.pid
+*.seed
+*.orig
 
-# Package Files #
+# Tệp jar, war hoặc ear xuất ra
 *.jar
 *.war
-*.nar
 *.ear
-*.zip
-*.tar.gz
-*.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# Tệp cấu hình có thể được tạo động hoặc chứa thông tin nhạy cảm
+*.class
+*.db
+*.sqlite
+*.env
+
+# Các thư mục vendor hoặc các file được tải xuống
+lib/
+
+# Các file của hệ điều hành Windows
+*.class
+*.exe
+*.dll
+*.pdb
+
+# Node modules (nếu có sử dụng frontend với npm)
+node_modules/
+
+# Tệp dành riêng cho Tomcat hoặc các server servlet khác
+logs/
+work/
+temp/
+
+.metadata
+.vscode/
+.idea/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# PyDev specific (Python IDE for Eclipse)
+*.pydevproject
+
+# CDT-specific (C/C++ Development Tooling)
+.cproject
+
+# CDT- autotools
+.autotools
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific (PHP Development Tools)
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+# Annotation Processing
+.apt_generated/
+.apt_generated_test/
+
+# Scala IDE specific (Scala & Java development for Eclipse)
+.cache-main
+.scala_dependencies
+.worksheet
+
+# Uncomment this line if you wish to ignore the project description file.
+# Typically, this file would be tracked if it contains build/dependency configurations:
+#.project

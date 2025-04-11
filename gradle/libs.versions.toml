@@ -2,11 +2,47 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
+com-auth0-java-jwt = "3.18.2"
+com-fasterxml-jackson-core-jackson-databind = "2.15.2"
+com-github-ua-parser-uap-java = "1.6.1"
+com-google-code-gson-gson = "2.12.1"
+com-google-zxing-javase = "3.5.3"
+com-mysql-mysql-connector-j = "9.1.0"
+com-sun-mail-javax-mail = "1.6.2"
+dev-samstevens-totp-totp = "1.7.1"
 jakarta-servlet-jakarta-servlet-api = "6.1.0"
+jakarta-servlet-jsp-jstl-jakarta-servlet-jsp-jstl-api = "3.0.1"
+javax-json-javax-json-api = "1.0"
+org-apache-httpcomponents-client5-httpclient5-fluent = "5.2"
+org-apache-httpcomponents-httpclient = "4.5.14"
+org-apache-httpcomponents-httpcore = "4.4.13"
+org-apache-httpcomponents-httpmime = "4.5.13"
+org-glassfish-javax-json = "1.1.4"
+org-glassfish-web-jakarta-servlet-jsp-jstl = "3.0.1"
+org-jdbi-jdbi3-core = "3.47.0"
+org-json-json = "20230227"
 org-junit-jupiter-junit-jupiter-api = "5.11.0-M2"
 org-junit-jupiter-junit-jupiter-engine = "5.11.0-M2"
 
 [libraries]
+com-auth0-java-jwt = { module = "com.auth0:java-jwt", version.ref = "com-auth0-java-jwt" }
+com-fasterxml-jackson-core-jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "com-fasterxml-jackson-core-jackson-databind" }
+com-github-ua-parser-uap-java = { module = "com.github.ua-parser:uap-java", version.ref = "com-github-ua-parser-uap-java" }
+com-google-code-gson-gson = { module = "com.google.code.gson:gson", version.ref = "com-google-code-gson-gson" }
+com-google-zxing-javase = { module = "com.google.zxing:javase", version.ref = "com-google-zxing-javase" }
+com-mysql-mysql-connector-j = { module = "com.mysql:mysql-connector-j", version.ref = "com-mysql-mysql-connector-j" }
+com-sun-mail-javax-mail = { module = "com.sun.mail:javax.mail", version.ref = "com-sun-mail-javax-mail" }
+dev-samstevens-totp-totp = { module = "dev.samstevens.totp:totp", version.ref = "dev-samstevens-totp-totp" }
 jakarta-servlet-jakarta-servlet-api = { module = "jakarta.servlet:jakarta.servlet-api", version.ref = "jakarta-servlet-jakarta-servlet-api" }
+jakarta-servlet-jsp-jstl-jakarta-servlet-jsp-jstl-api = { module = "jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api", version.ref = "jakarta-servlet-jsp-jstl-jakarta-servlet-jsp-jstl-api" }
+javax-json-javax-json-api = { module = "javax.json:javax.json-api", version.ref = "javax-json-javax-json-api" }
+org-apache-httpcomponents-client5-httpclient5-fluent = { module = "org.apache.httpcomponents.client5:httpclient5-fluent", version.ref = "org-apache-httpcomponents-client5-httpclient5-fluent" }
+org-apache-httpcomponents-httpclient = { module = "org.apache.httpcomponents:httpclient", version.ref = "org-apache-httpcomponents-httpclient" }
+org-apache-httpcomponents-httpcore = { module = "org.apache.httpcomponents:httpcore", version.ref = "org-apache-httpcomponents-httpcore" }
+org-apache-httpcomponents-httpmime = { module = "org.apache.httpcomponents:httpmime", version.ref = "org-apache-httpcomponents-httpmime" }
+org-glassfish-javax-json = { module = "org.glassfish:javax.json", version.ref = "org-glassfish-javax-json" }
+org-glassfish-web-jakarta-servlet-jsp-jstl = { module = "org.glassfish.web:jakarta.servlet.jsp.jstl", version.ref = "org-glassfish-web-jakarta-servlet-jsp-jstl" }
+org-jdbi-jdbi3-core = { module = "org.jdbi:jdbi3-core", version.ref = "org-jdbi-jdbi3-core" }
+org-json-json = { module = "org.json:json", version.ref = "org-json-json" }
 org-junit-jupiter-junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "org-junit-jupiter-junit-jupiter-api" }
 org-junit-jupiter-junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "org-junit-jupiter-junit-jupiter-engine" }

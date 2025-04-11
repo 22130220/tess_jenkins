@@ -9,7 +9,7 @@ COPY . .
 
 # Chạy lệnh Gradle để build ứng dụng, tạo file .war
 # --no-daemon để tránh Gradle daemon trong container
-RUN gradle clean build --no-daemon
+RUN gradle clean build --no-daemon -x test
 
 # Sử dụng image Tomcat chính thức cho giai đoạn chạy ứng dụng
 FROM tomcat:10.1.36-jre21

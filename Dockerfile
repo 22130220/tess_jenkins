@@ -1,7 +1,7 @@
-FROM maven:3.9-amazoncorretto-21 AS build
+FROM gradle:jdk21 AS build
 WORKDIR /app
 COPY . .
-RUN mvn clean package -DskipTests
+RUN gradle clean build --no-daemon
 
 
 

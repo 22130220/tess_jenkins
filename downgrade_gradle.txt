@@ -1,0 +1,21 @@
+Sửa file gradle-wrapper.properties
+Mở file D:\tess_jenkins\gradle\wrapper\gradle-wrapper.properties trong IntelliJ hoặc trình soạn thảo văn bản.
+
+Thay đổi dòng distributionUrl để trỏ đến phiên bản Gradle mong muốn. Ví dụ:
+
+properties
+
+Sao chép
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.6-bin.zip
+Lưu file.
+
+4. Cập nhật Gradle Wrapper
+Để đảm bảo Gradle wrapper được cập nhật đúng phiên bản:
+Mở terminal trong IntelliJ (hoặc command line tại thư mục dự án: D:\tess_jenkins).
+
+Chạy lệnh:
+
+bash
+
+Sao chép
+./gradlew wrapper --gradle-version 7.6

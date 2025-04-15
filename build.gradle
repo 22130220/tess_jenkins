@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'war'
+    id 'org.hidetake.ssh' version '2.11.2'
 }
 
 repositories {
@@ -9,7 +10,6 @@ repositories {
 }
 
 dependencies {
-    // Dependency cho ứng dụng web, đóng gói vào .war
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.1'
     implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
     implementation 'org.jdbi:jdbi3-core:3.47.0'
@@ -28,12 +28,8 @@ dependencies {
     implementation 'javax.json:javax.json-api:1.1.4'
     implementation 'org.glassfish:javax.json:1.1.4'
     implementation 'org.json:json:20230227'
-
-    // Dependency cho test
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.0-M2'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.11.0-M2'
-
-    // Dependency chỉ cần khi biên dịch, do Tomcat cung cấp
     compileOnly 'jakarta.servlet:jakarta.servlet-api:6.1.0'
 }
 
@@ -55,9 +51,55 @@ tasks.withType(Javadoc) {
 }
 
 war {
-    archiveFileName = 'CuaHangGachMen.war' // Tên file .war
+    archiveFileName = 'CuaHangGachMen.war'
 }
 
 test {
-    useJUnitPlatform() // Hỗ trợ JUnit 5
+    useJUnitPlatform()
 }
+
+//ssh.settings {
+//    knownHosts = allowAnyHosts
+//}
+//
+//remotes {
+//    host {
+//        host = '192.168.186.128'
+//        user = 'phuc'
+//        password = '123'
+//    }
+//}
+//task deploy {
+//    doLast {
+//        println 'begin docker_app_start'
+//        ssh.run {
+//            session(remotes.host) {
+//                execute 'docker stop tomcat', ignoreError: true
+//                execute 'docker run -it --rm -d ' +
+//                        '--name tomcat ' +
+//                        '-v /usr/deploy:/usr/local/tomcat/webapps ' +
+//                        '-p 80:8080 ' +
+//                        'tomcat:10.1.40-jre21'
+//            }
+//        }
+//    }
+//}
+//
+//task docker_upload_file_to_server {
+//    doLast {
+//        println 'begin docker_upload_file_to_server'
+//        ssh.run {
+//            session(remotes.host) {
+//                execute 'rm -f /usr/deploy/ROOT.war', ignoreError: true
+//                put from: "${project.projectDir}/build/libs/CuaHangGachMen.war",
+//                        into: "/usr/deploy/ROOT.war"
+//            }
+//        }
+//    }
+//}
+//
+//task docker_deploy {
+//    dependsOn build, docker_upload_file_to_server, deploy
+//    tasks.getByName('docker_upload_file_to_server').mustRunAfter build
+//    tasks.getByName('deploy').mustRunAfter docker_upload_file_to_server
+//}

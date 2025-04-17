@@ -226,7 +226,7 @@
 
         <c:choose>
           <c:when test="${!sessionScope.userRole.havePermission('user.cart', 4)}">
-            <h1>Không có quyền k4</h1>
+            <h1>Không có quyền k87</h1>
           </c:when>
           <c:otherwise>
             <a href="cart" class="cart-button">
